@@ -26,8 +26,8 @@ pipeline {
                     withCredentials([string(credentialsId: 'token', variable: 'SONAR_TOKEN')]) {
                         sh """
                             mvn clean verify sonar:sonar \
-                              -Dsonar.projectKey=demo \
-                              -Dsonar.projectName='demo' \
+                              -Dsonar.projectKey=sonar \
+                              -Dsonar.projectName='sonar' \
                               -Dsonar.host.url=http://13.204.82.179:9000 \
                               -Dsonar.token=$SONAR_TOKEN
                         """
